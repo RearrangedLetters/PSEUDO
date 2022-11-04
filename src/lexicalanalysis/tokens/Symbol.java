@@ -3,7 +3,7 @@ package lexicalanalysis.tokens;
 public class Symbol {
 	private final String symbol;
 
-	Symbol(String symbol) {
+	public Symbol(String symbol) {
 		this.symbol = symbol;
 	}
 }
