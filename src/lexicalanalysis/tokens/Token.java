@@ -10,4 +10,11 @@ public abstract class Token {
 	public TokenType getType() {
 		return this.type;
 	}
+
+	@Override
+	public String toString() {
+		return "Token{" +
+				"type=" + type +
+				'}';
+	}
 }
