@@ -71,7 +71,7 @@ public class Lexer {
 				nextCharacter();
 				if (currentCharacter == '-') {
 					nextCharacter();
-					return new PSEUDOToken(TokenType.ASSIGN);
+					return new PSEUDOToken(TokenType.DEFINE);
 				} else if (currentCharacter == '=') {
 					nextCharacter();
 					return new PSEUDOToken(TokenType.LESS_THAN);
