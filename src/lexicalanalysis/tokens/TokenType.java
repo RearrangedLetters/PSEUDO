@@ -10,7 +10,7 @@ public enum TokenType {
 	NUMBER(""),
 	ASSIGN_LEFT("<-"),
 	PLUS("+"),
-	EOF("EOF");
+	EOF("EOF"), ERROR("Error");
 
 	private final String string;
 
