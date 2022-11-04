@@ -1,7 +1,7 @@
 package lexicalanalysis;
 
 import lexicalanalysis.tokens.Identifier;
-import lexicalanalysis.tokens.MilabToken;
+import lexicalanalysis.tokens.PSEUDOToken;
 import lexicalanalysis.tokens.Symbol;
 import lexicalanalysis.tokens.Token;
 import lexicalanalysis.tokens.TokenType;
@@ -38,9 +38,9 @@ public class Lexer {
 		switch (currentCharacter) {
 			case INVALID -> {
 				if (lastException == null) {
-					return new MilabToken(TokenType.EOF);
+					return new PSEUDOToken(TokenType.EOF);
 				} else {
-					return new MilabToken(TokenType.ERROR);
+					return new PSEUDOToken(TokenType.ERROR);
 				}
 			}
 			case ' ', '\t', '\n' -> {
@@ -49,34 +49,34 @@ public class Lexer {
 			}
 			case '+' -> {
 				nextCharacter();
-				return new MilabToken(TokenType.PLUS);
+				return new PSEUDOToken(TokenType.PLUS);
 			}
 			case '{' -> {
 				nextCharacter();
-				return new MilabToken(TokenType.CURLY_OPEN);
+				return new PSEUDOToken(TokenType.CURLY_OPEN);
 			}
 			case '}' -> {
 				nextCharacter();
-				return new MilabToken(TokenType.CURLY_CLOSE);
+				return new PSEUDOToken(TokenType.CURLY_CLOSE);
 			}
 			case '(' -> {
 				nextCharacter();
-				return new MilabToken(TokenType.PARENTHESIS_OPEN);
+				return new PSEUDOToken(TokenType.PARENTHESIS_OPEN);
 			}
 			case ')' -> {
 				nextCharacter();
-				return new MilabToken(TokenType.PARENTHESIS_CLOSE);
+				return new PSEUDOToken(TokenType.PARENTHESIS_CLOSE);
 			}
 			case '<' -> {
 				nextCharacter();
 				if (currentCharacter == '-') {
 					nextCharacter();
-					return new MilabToken(TokenType.ASSIGN);
+					return new PSEUDOToken(TokenType.ASSIGN);
 				} else if (currentCharacter == '=') {
 					nextCharacter();
-					return new MilabToken(TokenType.LESS_THAN);
+					return new PSEUDOToken(TokenType.LESS_THAN);
 				} else {
-					return new MilabToken(TokenType.LESS);
+					return new PSEUDOToken(TokenType.LESS);
 				}
 			}
 			default -> {
@@ -86,7 +86,7 @@ public class Lexer {
 					return parseIdentifier();
 				}
 				lastException = new Exception("Encountered unexpected character!");
-				return new MilabToken(TokenType.ERROR);
+				return new PSEUDOToken(TokenType.ERROR);
 			}
 		}
 	}
@@ -100,7 +100,7 @@ public class Lexer {
 		String tokenString = identifierString.toString();
 		TokenType tokenType = tokens.get(tokenString);
 		if (tokenType != null) {
-			return new MilabToken(tokenType);
+			return new PSEUDOToken(tokenType);
 		}
 		Symbol identifier = stringTable.getSymbol(tokenString);
 		return new Identifier(identifier);

@@ -12,4 +12,11 @@ public class Number extends Token {
 	public long getInt() {
 		return Integer.parseInt(numberString);
 	}
+
+	@Override
+	public String toString() {
+		return "Token{" +
+				"numberString='" + numberString + '\'' +
+				'}';
+	}
 }

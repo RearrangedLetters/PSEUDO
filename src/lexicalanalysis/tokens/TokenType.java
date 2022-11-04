@@ -26,4 +26,9 @@ public enum TokenType {
 	public String getString() {
 		return this.string;
 	}
+
+	@Override
+	public String toString() {
+		return "TokenType{" + '\"' + string + '\"' + '}';
+	}
 }

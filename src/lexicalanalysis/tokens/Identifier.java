@@ -11,4 +11,11 @@ public class Identifier extends Token {
 	public Symbol getSymbol() {
 		return symbol;
 	}
+
+	@Override
+	public String toString() {
+		return "Identifier{" +
+				"symbol=" + symbol +
+				'}';
+	}
 }

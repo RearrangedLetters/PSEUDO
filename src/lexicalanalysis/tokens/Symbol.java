@@ -6,4 +6,9 @@ public class Symbol {
 	public Symbol(String symbol) {
 		this.symbol = symbol;
 	}
+
+	@Override
+	public String toString() {
+		return "{\"" + symbol + '\"' + '}';
+	}
 }
