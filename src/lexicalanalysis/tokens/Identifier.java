@@ -3,8 +3,9 @@ package lexicalanalysis.tokens;
 public class Identifier extends Token {
 	private Symbol symbol;
 
-	public Identifier(TokenType type) {
-		super(type);
+	public Identifier(Symbol symbol) {
+		super(TokenType.IDENTIFIER);
+		this.symbol = symbol;
 	}
 
 	public Symbol getSymbol() {
