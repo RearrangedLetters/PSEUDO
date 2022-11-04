@@ -1,4 +1,4 @@
-package semanticanalysis;
+package syntacticanalysis;
 
 import lexicalanalysis.tokens.Symbol;
 

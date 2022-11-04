@@ -1,7 +1,6 @@
-package semanticanalysis.statements;
+package syntacticanalysis.statements;
 
-import semanticanalysis.Statement;
-import semanticanalysis.Visitor;
+import syntacticanalysis.Visitor;
 
 public class InvalidStatement extends Statement {
 	@Override

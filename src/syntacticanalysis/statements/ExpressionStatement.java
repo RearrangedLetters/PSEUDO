@@ -1,8 +1,7 @@
-package semanticanalysis.statements;
+package syntacticanalysis.statements;
 
-import semanticanalysis.Statement;
-import semanticanalysis.Visitor;
-import semanticanalysis.expressions.Expression;
+import syntacticanalysis.Visitor;
+import syntacticanalysis.expressions.Expression;
 
 public class ExpressionStatement extends Statement {
 	private final Expression expression;

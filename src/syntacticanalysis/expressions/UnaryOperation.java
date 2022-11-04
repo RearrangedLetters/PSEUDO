@@ -1,6 +1,6 @@
-package semanticanalysis;
+package syntacticanalysis.expressions;
 
-import semanticanalysis.expressions.Expression;
+import syntacticanalysis.Visitor;
 
 public class UnaryOperation extends Expression {
 	public enum Type {

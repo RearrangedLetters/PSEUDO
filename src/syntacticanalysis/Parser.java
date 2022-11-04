@@ -1,4 +1,4 @@
-package semanticanalysis;
+package syntacticanalysis;
 
 import lexicalanalysis.Lexer;
 import lexicalanalysis.StringTable;
@@ -6,14 +6,18 @@ import lexicalanalysis.tokens.Identifier;
 import lexicalanalysis.tokens.Symbol;
 import lexicalanalysis.tokens.Token;
 import lexicalanalysis.tokens.TokenType;
-import lexicalanalysis.tokens.Number;
-import semanticanalysis.expressions.BinaryOperation;
-import semanticanalysis.expressions.Expression;
-import semanticanalysis.expressions.NumberExpression;
-import semanticanalysis.expressions.Reference;
-import semanticanalysis.statements.Block;
-import semanticanalysis.statements.ExpressionStatement;
-import semanticanalysis.statements.InvalidStatement;
+import syntacticanalysis.expressions.Assignment;
+import syntacticanalysis.expressions.BinaryOperation;
+import syntacticanalysis.expressions.Call;
+import syntacticanalysis.expressions.Expression;
+import syntacticanalysis.expressions.InvalidExpression;
+import syntacticanalysis.expressions.NumberExpression;
+import syntacticanalysis.expressions.Reference;
+import syntacticanalysis.expressions.UnaryOperation;
+import syntacticanalysis.statements.Block;
+import syntacticanalysis.statements.ExpressionStatement;
+import syntacticanalysis.statements.InvalidStatement;
+import syntacticanalysis.statements.Statement;
 
 import java.util.ArrayList;
 
@@ -145,7 +149,7 @@ public class Parser {
 				case NOT_EQUAL -> {
 					skip(TokenType.NOT_EQUAL);
 					Expression right = parseEqualityOperation();
-					expression = new BinaryOperation(BinaryOperation.Type.NOTEQUAL, expression, right);
+					expression = new BinaryOperation(BinaryOperation.Type.NOT_EQUAL, expression, right);
 					continue;
 				}
 				default -> {}
@@ -168,7 +172,7 @@ public class Parser {
 				case LESS_THAN -> {
 					skip(TokenType.LESS_THAN);
 					Expression right = parseRelationalOperation();
-					expression = new BinaryOperation(BinaryOperation.Type.LESS_THAN, expression, right);
+					expression = new BinaryOperation(BinaryOperation.Type.LESS_EQUAL, expression, right);
 					continue;
 				}
 				case GREATER -> {
@@ -180,7 +184,7 @@ public class Parser {
 				case GREATER_THAN -> {
 					skip(TokenType.GREATER_THAN);
 					Expression right = parseRelationalOperation();
-					expression = new BinaryOperation(BinaryOperation.Type.GREATER_THAN, expression, right);
+					expression = new BinaryOperation(BinaryOperation.Type.GREATER_EQUAL, expression, right);
 					continue;
 				}
 				default -> {

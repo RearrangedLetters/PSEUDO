@@ -1,6 +1,6 @@
-package semanticanalysis;
+package syntacticanalysis.expressions;
 
-import semanticanalysis.expressions.Expression;
+import syntacticanalysis.Visitor;
 
 public class InvalidExpression extends Expression {
 	@Override

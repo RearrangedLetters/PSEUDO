@@ -1,6 +1,7 @@
-package semanticanalysis;
+package syntacticanalysis;
 
 import lexicalanalysis.tokens.Symbol;
+import syntacticanalysis.statements.Statement;
 
 import java.util.List;
 

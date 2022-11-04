@@ -1,6 +1,6 @@
-package semanticanalysis.expressions;
+package syntacticanalysis.expressions;
 
-import semanticanalysis.Visitor;
+import syntacticanalysis.Visitor;
 
 public class NumberExpression extends Expression {
 	private final String string;

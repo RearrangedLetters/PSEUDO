@@ -1,9 +1,9 @@
-package semanticanalysis.expressions;
+package syntacticanalysis.expressions;
 
 import lexicalanalysis.tokens.Symbol;
-import semanticanalysis.Visitor;
+import syntacticanalysis.Referenceable;
+import syntacticanalysis.Visitor;
 
-import javax.naming.Referenceable;
 
 public class Reference extends Expression {
 	private final Symbol identifier;
@@ -22,7 +22,7 @@ public class Reference extends Expression {
 	}
 
 	public Referenceable getSource() {
-		return source;
+		return this.source;
 	}
 
 	@Override

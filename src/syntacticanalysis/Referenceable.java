@@ -1,4 +1,4 @@
-package semanticanalysis;
+package syntacticanalysis;
 
 public interface Referenceable {
 	SemanticType getType();

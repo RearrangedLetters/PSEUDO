@@ -1,9 +1,7 @@
-package semanticanalysis.statements;
+package syntacticanalysis.statements;
 
-import semanticanalysis.Statement;
-import semanticanalysis.Visitor;
+import syntacticanalysis.Visitor;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.ArrayList;
 import java.util.List;
 

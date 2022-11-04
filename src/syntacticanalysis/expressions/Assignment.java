@@ -1,7 +1,8 @@
-package semanticanalysis;
+package syntacticanalysis.expressions;
 
 import lexicalanalysis.tokens.Symbol;
-import semanticanalysis.expressions.Expression;
+import syntacticanalysis.Referenceable;
+import syntacticanalysis.Visitor;
 
 public class Assignment extends Expression {
 	private final Symbol identifier;

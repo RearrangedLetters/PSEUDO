@@ -1,7 +1,7 @@
-package semanticanalysis.expressions;
+package syntacticanalysis.expressions;
 
-import semanticanalysis.Visitor;
-import semanticanalysis.SemanticType;
+import syntacticanalysis.Visitor;
+import syntacticanalysis.SemanticType;
 
 public abstract class Expression {
 	private SemanticType semanticType;
