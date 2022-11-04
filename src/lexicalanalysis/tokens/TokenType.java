@@ -8,9 +8,14 @@ public enum TokenType {
 	CURLY_CLOSE("}"),
 	RETURN("RETURN"),
 	NUMBER(""),
-	ASSIGN_LEFT("<-"),
+	ASSIGN("<-"),
 	PLUS("+"),
-	EOF("EOF"), ERROR("Error");
+	EOF("EOF"),
+	ERROR("Error"),
+	LESS_THAN("<="),
+	LESS("<"),
+	IDENTIFIER("Identifier"),
+	;
 
 	private final String string;
 
